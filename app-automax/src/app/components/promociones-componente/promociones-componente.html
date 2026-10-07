@@ -1,0 +1,14 @@
+<h2 class="text-center text-primary fw-bold mb-4">Promociones y Ofertas</h2>
+<div class="row mx-3 g-4">
+    @for (promocion of listaPromociones; track promocion.titulo) {
+        <div class="col-12 col-md-4">
+            <div class="card h-100 border-0 shadow rounded-4 overflow-hidden">
+                <div class="card-header bg-success text-white text-center fw-bold fs-5">{{promocion.descuento}}</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{promocion.titulo}}</h5>
+                    <p class="card-text text-muted">{{promocion.descripcion}}</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,25 @@
+<h2 class="text-center text-primary fw-bold mb-4">Nuestros Vehículos</h2>
+
+<div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+    <button class="btn btn-primary rounded-pill" (click)="mostrar()">Todos</button>
+    @for (categoria of categorias; track categoria) {
+        <button class="btn btn-outline-primary rounded-pill" (click)="filtrar(categoria)">{{categoria}}</button>
+    }
+</div>
+
+<div class="row mx-3 g-4">
+    @for (vehiculo of listaVehiculos; track vehiculo.modelo) {
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow rounded-4 overflow-hidden">
+                <img [src]="vehiculo.imagen" class="card-img-top object-fit-cover" style="height: 180px;" [alt]="vehiculo.nombre">
+                <div class="card-body">
+                    <span class="badge rounded-pill bg-primary mb-2">{{vehiculo.categoria}}</span>
+                    <h5 class="card-title fw-bold">{{vehiculo.marca}} {{vehiculo.nombre}}</h5>
+                    <p class="card-text text-muted small mb-1">Modelo: {{vehiculo.modelo}} | Año: {{vehiculo.anio}}</p>
+                    <p class="card-text small">{{vehiculo.caracteristicas}}</p>
+                </div>
+                <div class="card-footer bg-success text-white text-center fw-bold fs-5">$ {{vehiculo.precio}}</div>
+            </div>
+        </div>
+    }
+</div>

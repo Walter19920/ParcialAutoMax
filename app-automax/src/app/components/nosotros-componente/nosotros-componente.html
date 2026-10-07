@@ -1,0 +1,14 @@
+<h2 class="text-center text-primary fw-bold mb-4">Sobre Nosotros</h2>
+<div class="row mx-3 g-4">
+    @for (info of listaInformacion; track info.titulo) {
+        <div class="col-12 col-md-4">
+            <div class="card h-100 text-center border-0 shadow rounded-4">
+                <div class="card-body">
+                    <div class="display-4">{{info.icono}}</div>
+                    <h5 class="card-title mt-2">{{info.titulo}}</h5>
+                    <p class="card-text text-muted">{{info.texto}}</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
